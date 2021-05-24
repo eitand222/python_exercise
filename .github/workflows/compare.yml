@@ -34,7 +34,12 @@ jobs:
         run: |
           7z x folder_A.7z
           7z x folder_B.7z
+          
+          sort folder_A/file1.txt > folder_A/file1.sorted.txt
+          sort folder_B/file1.txt > folder_B/file1.sorted.txt
+          
           sort folder_A/file2.txt > folder_A/file2.sorted.txt
           sort folder_B/file2.txt > folder_B/file2.sorted.txt
+          
           diff -s folder_A/file1.sorted.txt folder_B/file1.sorted.txt
           diff -s folder_A/file2.sorted.txt folder_B/file2.sorted.txt
